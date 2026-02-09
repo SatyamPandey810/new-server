@@ -34,6 +34,11 @@ app.use('/api', feedRouter);
 app.use("/api", postRouter);
 app.use("/api", messageRouter);
 
+app.get("/api/get",(req,res)=>{
+  res.send({message:"hello world"})
+})
+
+
 // ✅ Connect DB and start server
 connectDb().then(() => {
   server.listen(PORT, () => { // 🔹 app.listen → server.listen
